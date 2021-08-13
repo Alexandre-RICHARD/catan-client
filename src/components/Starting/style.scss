@@ -1,0 +1,58 @@
+.nicknameBox {
+  background-color: #e2e2e2;
+  width: 300px;
+  height: 350px;
+  margin: auto;
+  margin-top: calc(50vh - 220px);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.nicknameBoxHeader {
+  width: 100%;
+  // height: 100px;
+  min-height: 100px;
+  background-color: #911E2B;
+  background-image: url(../../assets/images/gameTitle.jpg);
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.nicknameForm {
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: center;
+}
+
+.indication {
+  margin: 35px 15px 5px 15px;
+  text-align: center;
+}
+
+.nicknameInput {
+  margin: 5px 15px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #333;
+}
+
+.nicknameValidation {
+  margin: 25px 15px;
+  height: 100px;
+  border: none;
+  background-color: #88585d;
+  transition: all 0.2s;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.nicknameValidation:hover {
+  transform: scale(1.05);
+  background-color: #911E2B;
+}

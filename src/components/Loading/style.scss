@@ -1,0 +1,21 @@
+.loadingDiv {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+$loadingPartSize: 30px;
+
+.loadingPart {
+  z-index: 10000;
+  height: $loadingPartSize;
+  width: $loadingPartSize;
+  border-radius: $loadingPartSize / 2;
+  background-color: #8b18ce;
+  position: fixed;
+  top: calc(50% - #{$loadingPartSize} / 2);
+  left: calc(50% - #{$loadingPartSize} / 2);
+}
