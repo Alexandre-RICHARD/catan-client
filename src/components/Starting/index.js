@@ -21,8 +21,8 @@ const Starting = (({
 
   return (
     <div className="nicknameBox">
+      <div className="nicknameBoxHeader" />
       <form className="nicknameForm">
-        <div className="nicknameBoxHeader" />
         <p className="indication">Choisir un pseudo pour jouer</p>
         <input placeholder={Placeholder} className="nicknameInput" minLength="1" maxLength="30" value={Nickname} onChange={handleValueChange} />
         <input onClick={handleSubmitNickname} type="Submit" className="nicknameValidation" value="Valider et accéder au jeu" readOnly />

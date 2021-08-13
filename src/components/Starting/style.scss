@@ -23,26 +23,26 @@
 }
 
 .nicknameForm {
-  // display: flex;
-  // flex-direction: row;
-  // justify-content: center;
+  padding: 15px
 }
 
 .indication {
-  margin: 35px 15px 5px 15px;
+  margin: 5px 0;
   text-align: center;
 }
 
 .nicknameInput {
-  margin: 5px 15px;
+  margin: 5px 0px;
   padding: 10px;
+  width: 100%;
   border-radius: 10px;
   border: 1px solid #333;
 }
 
 .nicknameValidation {
-  margin: 25px 15px;
-  height: 100px;
+  margin-top: 15px;
+  width: 100%;
+  padding: 50px 0;
   border: none;
   background-color: #88585d;
   transition: all 0.2s;

@@ -21,7 +21,9 @@ const App = (({
   haveNickname,
   isLoading,
 }) => {
-  console.log('Juste là pour garder la forme');
+  let a = 1;
+  const b = a;
+  a = b;
   return (
     <Router>
       <div className="App">
