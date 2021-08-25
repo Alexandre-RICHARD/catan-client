@@ -5,17 +5,44 @@
   top: 0;
   left: 0;
   overflow: hidden;
+  background-color: #83838373;
 }
 
-$loadingPartSize: 30px;
+$loadingPartSize: 16px;
 
 .loadingPart {
-  z-index: 10000;
+  background-color: #e0e0e0;
+  position: fixed;
+  top: calc(50% - #{$loadingPartSize} / 2);
+  left: $loadingPartSize / -2;
   height: $loadingPartSize;
   width: $loadingPartSize;
   border-radius: $loadingPartSize / 2;
-  background-color: #8b18ce;
-  position: fixed;
-  top: calc(50% - #{$loadingPartSize} / 2);
-  left: calc(50% - #{$loadingPartSize} / 2);
+  animation: 0.75s ease-in-out 0s infinite running loadingAnimation;
+}
+
+@keyframes loadingAnimation {
+  0% {
+    width: $loadingPartSize;
+  }
+
+  25% {
+    margin-left: 0;
+    width: 50%;
+  }
+  
+  50% {
+    margin-left: calc(50% - #{$loadingPartSize} / 2);
+    width: $loadingPartSize;
+  }
+
+  75% {
+    margin-left: calc(50% - #{$loadingPartSize} / 2);
+    width: 50%;
+  }
+
+  100% {
+    margin-left: 100%;
+    width: $loadingPartSize;
+  }
 }
