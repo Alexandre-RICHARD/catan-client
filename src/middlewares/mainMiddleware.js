@@ -2,7 +2,9 @@ import axios from 'axios';
 
 import {
   SUBMIT_NICKNAME,
+  SUBMIT_CHAT_MESSAGE,
   changeValue,
+  errorMessage,
 } from 'src/actions/mainActions';
 
 import {
@@ -18,20 +20,41 @@ const main = (store) => (next) => (action) => {
         socketId: state.main.socketId,
         nickname: state.main.nickname,
       })
-        .then((reponse) => {
-          if (reponse.statusText === 'OK') {
+        .then((response) => {
+          if (response.statusText === 'OK') {
             store.dispatch(changeValue('haveNickname', true));
           }
         })
-        .catch((error) => {
-          if (error.response) {
-            store.dispatch('errorMessage', error.response.data);
+        .catch((err) => {
+          if (err.response) {
+            store.dispatch(errorMessage(err.response.data));
           }
         })
         .finally(() => {
-          setTimeout(() => {
-            store.dispatch(changeValue('loading', false));
-          }, 1500);
+          store.dispatch(changeValue('loading', false));
+        });
+      break;
+    }
+    case SUBMIT_CHAT_MESSAGE: {
+      store.dispatch(changeValue('loading', true));
+      const Time = new Date();
+      axios.post(`${baseUrl}/chatmessage`, {
+        talker: state.main.nickname,
+        time: `${Time.getHours().toString().length === 1 ? `0${Time.getHours()}` : Time.getHours()}:${Time.getMinutes().toString().length === 1 ? `0${Time.getMinutes()}` : Time.getMinutes()}:${Time.getSeconds().toString().length === 1 ? `0${Time.getSeconds()}` : Time.getSeconds()}`,
+        message: state.main.message,
+      })
+        .then((response) => {
+          if (response.statusText === 'OK') {
+            store.dispatch(changeValue('message', ''));
+          }
+        })
+        .catch((err) => {
+          if (err.response) {
+            store.dispatch(errorMessage(err.response.data));
+          }
+        })
+        .finally(() => {
+          store.dispatch(changeValue('loading', false));
         });
       break;
     }

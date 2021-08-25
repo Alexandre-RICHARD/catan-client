@@ -4,6 +4,7 @@ import store from 'src/store';
 import {
   changeValue,
   stockPlayer,
+  newGlobalMessage,
 } from 'src/actions/mainActions';
 
 import {
@@ -23,6 +24,9 @@ const socketIo = (socket) => {
 
   socket.on('playerList', (arg) => {
     store.dispatch(stockPlayer(arg));
+  });
+  socket.on('newGlobalMessage', (arg) => {
+    store.dispatch(newGlobalMessage(arg.talker, arg.time, arg.message));
   });
 };
 
