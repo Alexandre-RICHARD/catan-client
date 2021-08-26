@@ -50,7 +50,7 @@
 
 
 .globalChat {
-  max-height: 60vh;
+  max-height: 59vh;
 
   .chatSeparator {
     width: 100%;
@@ -59,7 +59,9 @@
     justify-content: flex-end;
     
     .messageBox {
-      min-height: 50px;
+      min-height: 25px;
+      max-height: 49vh;
+      overflow-y: auto;
 
       .author {
         min-width: 30px;
@@ -82,13 +84,35 @@
       }
     }
 
-    .messageInput {
+    .chatInput {
+      display: flex;
+      margin-top: 5px;
 
+      .messageInput {
+        padding: 3px 10px;
+        margin-right: 5px;
+        width: 100%;
+        border: 1px solid #cccccc;
+        border-radius: 15px;
+      }
+  
+      .messageValidation {
+        padding: 3px 10px;
+        border-radius: 15px;
+        color: #aaa;
+        border: 1px solid #cccccc;
+      }
+
+      .messageValidation--OK {
+        color: #fff;
+        background-color: #196097;
+      }
+
+      .messageValidation--OK:hover {
+
+      }
     }
 
-    .messageValidation {
-
-    }
   }
 }
 

@@ -15,9 +15,8 @@ const Home = (({
 }) => {
   const playerListDisplay = [];
   playerList.forEach((player) => {
-    const preparedClass = `playerName ${player === nickname && 'player--itsme'}`;
     playerListDisplay.push(
-      <p className={preparedClass} key={player}>{player}</p>,
+      <p className={`playerName ${player === nickname && 'player--itsme'}`} key={player}>{player}</p>,
     );
   });
 
@@ -39,6 +38,10 @@ const Home = (({
     event.preventDefault();
     if (Message.length > 0 && Message.length < 301) {
       submitChatMessage();
+      setTimeout(() => {
+        const elem = document.getElementById('messageBox--id');
+        elem.scrollTop = elem.scrollHeight;
+      }, 100);
     }
   };
 
@@ -62,14 +65,14 @@ const Home = (({
         <div className="homeContent globalChat">
           <h1 className="title1">Canal de chat global</h1>
           <div className="chatSeparator">
-            <div className="messageBox">
+            <div id="messageBox--id" className="messageBox">
               <table>
                 {messages}
               </table>
             </div>
             <form className="chatInput">
               <input placeholder="Envoie un message ici" className="messageInput" minLength="1" maxLength="300" value={Message} onChange={handleValueChange} />
-              <input onClick={handleSubmitMessage} type="Submit" className="messageValidation" value="Envoyer" readOnly />
+              <input onClick={handleSubmitMessage} type="Submit" className={`messageValidation ${Message.length > 0 && 'messageValidation--OK'}`} value="Envoyer" readOnly />
             </form>
           </div>
         </div>
