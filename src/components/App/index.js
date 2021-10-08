@@ -15,35 +15,30 @@ import { io } from 'socket.io-client';
 import socketIo from 'src/middlewares/socketIo';
 
 const socket = io.connect('http://localhost:3000');
-socketIo(socket);
+socketIo(socket);u
 
 const App = (({
   haveNickname,
   isLoading,
-}) => {
-  let a = 1;
-  const b = a;
-  a = b;
-  return (
-    <Router>
-      <div className="App">
-        {isLoading && (<Loading />)}
-        <Switch>
-          <Route path="/" exact>
-            {haveNickname ? <Redirect to="/home" /> : <Redirect to="/starting" />}
-          </Route>
-          <Route path="/home" exact>
-            {haveNickname ? <Home /> : <Redirect to="/starting" />}
-          </Route>
-          <Route path="/starting" exact>
-            {haveNickname ? <Redirect to="/home" /> : <Starting />}
-          </Route>
-        </Switch>
-        <p className="siteReference">Aucun copyright, projet personnel non distribué ou commercialisé. Version 0.1</p>
-      </div>
-    </Router>
-  );
-});
+}) => (
+  <Router>
+    <div className="App">
+      {isLoading && (<Loading />)}
+      <Switch>
+        <Route path="/" exact>
+          {haveNickname ? <Redirect to="/home" /> : <Redirect to="/starting" />}
+        </Route>
+        <Route path="/home" exact>
+          {haveNickname ? <Home /> : <Redirect to="/starting" />}
+        </Route>
+        <Route path="/starting" exact>
+          {haveNickname ? <Redirect to="/home" /> : <Starting />}
+        </Route>
+      </Switch>
+      <p className="siteReference">Aucun copyright, projet personnel non distribué ou commercialisé. Version 0.1</p>
+    </div>
+  </Router>
+));
 
 App.propTypes = {
   haveNickname: PropTypes.bool.isRequired,

@@ -1,9 +1,9 @@
 {
-  "name": "Catan_Client",
+  "name": "catan_client",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack serve --config config/webpack.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.js",
-    "deploy": "surge ./dist/ Catan_Client.surge.sh",
+    "deploy": "surge ./dist/ catan_client.surge.sh",
     "lint": "eslint src/**/*.js",
     "lint:fix": "eslint --fix src/**/*.js",
     "clean": "rm -rf dist",
