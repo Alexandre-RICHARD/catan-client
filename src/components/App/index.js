@@ -15,7 +15,7 @@ import { io } from 'socket.io-client';
 import socketIo from 'src/middlewares/socketIo';
 
 const socket = io.connect('http://localhost:3000');
-socketIo(socket);u
+socketIo(socket);
 
 const App = (({
   haveNickname,

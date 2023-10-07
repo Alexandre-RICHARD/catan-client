@@ -5,7 +5,7 @@ import {
   NEW_GLOBAL_MESSAGE,
 } from 'src/actions/mainActions';
 
-const nicknamePLaceHolder = ['Dumbo', 'User666', 'Spies', 'Smarties', 'Ludo', 'Vespuchi', 'Explorer', 'Deadlyman', 'Batman', 'Foulque', 'Clotaire', 'Zizi', 'Pinky', 'GoldenRetrouver', 'Snowdotnow', 'Coolest ever', 'Du coup', 'Scatman', 'The Ouichieur', 'Potichat'];
+const nicknamePLaceHolder = ['Dumbo', 'User666', 'Spies', 'Smarties', 'Ludo', 'Vespuchi', 'Explorer', 'Deadlyman', 'Batman', 'Foulque', 'Clotaire', 'Pinky', 'GoldenRetrouver', 'Snowdotnow', 'Coolest ever', 'Du coup', 'Scatman', 'The Ouichieur', 'Potichat'];
 
 const initialState = {
   socketId: '',

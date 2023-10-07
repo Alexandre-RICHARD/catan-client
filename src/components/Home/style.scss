@@ -1,6 +1,6 @@
 .homeContainer {
   width: 100%;
-  height: calc(100vh-60px);
+  height: calc(100vh - 60px);
   display: flex;
   justify-content: space-around;
 }
@@ -9,7 +9,7 @@
   width: 29%;
   min-height: 20px;
   height: fit-content;
-  max-height: calc(100vh-60px);
+  max-height: calc(100vh - 60px);
   overflow-y: auto;
 }
 
