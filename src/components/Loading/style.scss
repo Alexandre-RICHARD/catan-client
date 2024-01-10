@@ -30,7 +30,7 @@ $loadingPartSize: 16px;
     margin-left: 0;
     width: 50%;
   }
-  
+
   50% {
     margin-left: calc(50% - #{$loadingPartSize} / 2);
     width: $loadingPartSize;
