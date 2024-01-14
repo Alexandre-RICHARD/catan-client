@@ -3,11 +3,12 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack serve --config config/webpack.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.js",
+    "update": "pnpm update || yarn upgrade || npm update",
     "deploy": "surge ./build/ catan_client.surge.sh",
     "lint": "eslint src/**/*.js",
     "lint:fix": "eslint --fix src/**/*.js",
-    "clean": "rm -rf build",
-    "clean:all": "rm -rf build node_modules"
+    "clean": "rd /s /q build 2> nul || rm -rf build",
+    "clean:all": "rd /s /q build node_modules 2> nul || rm -rf build node_modules"
   },
   "devDependencies": {
     "@babel/core": "^7.23.7",
